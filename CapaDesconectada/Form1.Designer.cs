@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnObtenerNoTipado = new System.Windows.Forms.Button();
+            this.gridNoTipado = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.gridNoTipado = new System.Windows.Forms.DataGridView();
-            this.gridTipado = new System.Windows.Forms.DataGridView();
-            this.btnObtenerNoTipado = new System.Windows.Forms.Button();
             this.btnObtenerTipado = new System.Windows.Forms.Button();
+            this.gridTipado = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoTipado)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTipado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +52,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DataSet No Tipado";
             // 
+            // btnObtenerNoTipado
+            // 
+            this.btnObtenerNoTipado.Location = new System.Drawing.Point(89, 232);
+            this.btnObtenerNoTipado.Name = "btnObtenerNoTipado";
+            this.btnObtenerNoTipado.Size = new System.Drawing.Size(169, 23);
+            this.btnObtenerNoTipado.TabIndex = 1;
+            this.btnObtenerNoTipado.Text = "Obtener Datos No Tipado";
+            this.btnObtenerNoTipado.UseVisualStyleBackColor = true;
+            this.btnObtenerNoTipado.Click += new System.EventHandler(this.btnObtenerNoTipado_Click);
+            // 
+            // gridNoTipado
+            // 
+            this.gridNoTipado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridNoTipado.Location = new System.Drawing.Point(6, 40);
+            this.gridNoTipado.Name = "gridNoTipado";
+            this.gridNoTipado.Size = new System.Drawing.Size(328, 150);
+            this.gridNoTipado.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnObtenerTipado);
@@ -63,32 +81,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DataSet Tipado";
             // 
-            // gridNoTipado
-            // 
-            this.gridNoTipado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridNoTipado.Location = new System.Drawing.Point(6, 40);
-            this.gridNoTipado.Name = "gridNoTipado";
-            this.gridNoTipado.Size = new System.Drawing.Size(328, 150);
-            this.gridNoTipado.TabIndex = 0;
-            // 
-            // gridTipado
-            // 
-            this.gridTipado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridTipado.Location = new System.Drawing.Point(12, 40);
-            this.gridTipado.Name = "gridTipado";
-            this.gridTipado.Size = new System.Drawing.Size(328, 150);
-            this.gridTipado.TabIndex = 1;
-            // 
-            // btnObtenerNoTipado
-            // 
-            this.btnObtenerNoTipado.Location = new System.Drawing.Point(89, 232);
-            this.btnObtenerNoTipado.Name = "btnObtenerNoTipado";
-            this.btnObtenerNoTipado.Size = new System.Drawing.Size(169, 23);
-            this.btnObtenerNoTipado.TabIndex = 1;
-            this.btnObtenerNoTipado.Text = "Obtener Datos No Tipado";
-            this.btnObtenerNoTipado.UseVisualStyleBackColor = true;
-            this.btnObtenerNoTipado.Click += new System.EventHandler(this.btnObtenerNoTipado_Click);
-            // 
             // btnObtenerTipado
             // 
             this.btnObtenerTipado.Location = new System.Drawing.Point(95, 232);
@@ -97,6 +89,15 @@
             this.btnObtenerTipado.TabIndex = 2;
             this.btnObtenerTipado.Text = "Obtener Datos Tipado";
             this.btnObtenerTipado.UseVisualStyleBackColor = true;
+            this.btnObtenerTipado.Click += new System.EventHandler(this.btnObtenerTipado_Click);
+            // 
+            // gridTipado
+            // 
+            this.gridTipado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridTipado.Location = new System.Drawing.Point(12, 40);
+            this.gridTipado.Name = "gridTipado";
+            this.gridTipado.Size = new System.Drawing.Size(328, 150);
+            this.gridTipado.TabIndex = 1;
             // 
             // Form1
             // 
@@ -108,8 +109,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridNoTipado)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTipado)).EndInit();
             this.ResumeLayout(false);
 

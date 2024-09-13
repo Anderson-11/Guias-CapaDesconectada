@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using CapaDesconectada.NorthwindTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,15 +16,26 @@ namespace CapaDesconectada
 {
     public partial class Form1 : Form
     {
-        CustomerRepository customer = new CustomerRepository();
         public Form1()
         {
             InitializeComponent();
         }
 
+        #region No tipado
+        CustomerRepository customer = new CustomerRepository();
         private void btnObtenerNoTipado_Click(object sender, EventArgs e)
         {
             gridNoTipado.DataSource = customer.ObtenerTodos();
         }
+        #endregion
+
+        #region Tipado
+        CustomersTableAdapter adaptador = new CustomersTableAdapter();
+        private void btnObtenerTipado_Click(object sender, EventArgs e)
+        {
+            var customers = adaptador.GetData();
+            gridTipado.DataSource = customers;
+        }
+        #endregion
     }
 }
