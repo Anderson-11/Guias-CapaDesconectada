@@ -14,7 +14,6 @@ namespace AccesoDatos
             get {return ConfigurationManager.ConnectionStrings["NWConnection"].ConnectionString;}
         }
 
-
         public static SqlConnection SqlConnection()
         {
            SqlConnection conexion = new SqlConnection(ConnectionString);

@@ -14,22 +14,21 @@ namespace AccesoDatos
         {
             DataTable dataTable = new DataTable();
 
-            String selectALl = "";
-            selectALl = selectALl + "SELECT [CustomerID] " + "\n";
-            selectALl = selectALl + "      ,[CompanyName] " + "\n";
-            selectALl = selectALl + "      ,[ContactName] " + "\n";
-            selectALl = selectALl + "      ,[ContactTitle] " + "\n";
-            selectALl = selectALl + "      ,[Address] " + "\n";
-            selectALl = selectALl + "      ,[City] " + "\n";
-            selectALl = selectALl + "      ,[Region] " + "\n";
-            selectALl = selectALl + "      ,[PostalCode] " + "\n";
-            selectALl = selectALl + "      ,[Country] " + "\n";
-            selectALl = selectALl + "      ,[Phone] " + "\n";
-            selectALl = selectALl + "      ,[Fax] " + "\n";
-            selectALl = selectALl + "  FROM [dbo].[Customers]";
+            String select = "";
+            select = select + "SELECT [CustomerID] " + "\n";
+            select = select + "      ,[CompanyName] " + "\n";
+            select = select + "      ,[ContactName] " + "\n";
+            select = select + "      ,[ContactTitle] " + "\n";
+            select = select + "      ,[Address] " + "\n";
+            select = select + "      ,[City] " + "\n";
+            select = select + "      ,[Region] " + "\n";
+            select = select + "      ,[PostalCode] " + "\n";
+            select = select + "      ,[Country] " + "\n";
+            select = select + "      ,[Phone] " + "\n";
+            select = select + "      ,[Fax] " + "\n";
+            select = select + "  FROM [dbo].[Customers]";
 
-            //var conexion = @"Data Source=DESKTOP-DHSOO9J\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
-            SqlDataAdapter adapter = new SqlDataAdapter(selectALl, DataBase.ConnectionString);
+            SqlDataAdapter adapter = new SqlDataAdapter(select, DataBase.ConnectionString);
             adapter.Fill(dataTable);
             return dataTable;
         }
