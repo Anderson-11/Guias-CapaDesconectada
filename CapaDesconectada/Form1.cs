@@ -22,15 +22,15 @@ namespace CapaDesconectada
         }
 
         #region No tipado
-        CustomerRepository customer = new CustomerRepository();
+        CustomerRepository customerRepository = new CustomerRepository();
         private void btnObtenerNoTipado_Click(object sender, EventArgs e)
         {
-            gridNoTipado.DataSource = customer.ObtenerTodos();
+            gridNoTipado.DataSource = customerRepository.ObtenerTodos();
         }
 
         private void btnBuscarNT_Click(object sender, EventArgs e)
         {
-            var cliente = customer.ObtenerPorID(tbxBusquedaNT.Text);
+            var cliente = customerRepository.ObtenerPorID(tbxBusquedaNT.Text);
 
             var encontrado = cliente.CompanyName;
             tbxEncontrado.Text = encontrado;
@@ -43,6 +43,18 @@ namespace CapaDesconectada
         {
             var customers = adaptador.GetData();
             gridTipado.DataSource = customers;
+        }
+
+        private void btnBuscarTip_Click(object sender, EventArgs e)
+        {
+            var customer = adaptador.GetDataBy(tbxBuscarTip.Text);
+
+            if (customer != null)
+            {
+                var objeto1 = customerRepository.ExtraerInformacionCliente(customer);
+                var encontrado = objeto1.CompanyName;
+                tbxEncontradoTip.Text = encontrado;
+            }
         }
         #endregion
     }
