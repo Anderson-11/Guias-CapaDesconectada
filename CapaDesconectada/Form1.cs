@@ -27,6 +27,14 @@ namespace CapaDesconectada
         {
             gridNoTipado.DataSource = customer.ObtenerTodos();
         }
+
+        private void btnBuscarNT_Click(object sender, EventArgs e)
+        {
+            var cliente = customer.ObtenerPorID(tbxBusquedaNT.Text);
+
+            var encontrado = cliente.CompanyName;
+            tbxEncontrado.Text = encontrado;
+        }
         #endregion
 
         #region Tipado
