@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,33 @@ namespace CapaDesconectada
 
             var encontrado = cliente.CompanyName;
             tbxEncontrado.Text = encontrado;
+            tbxBusquedaNT.Text = "";
+        }
+
+        private void btnInsertarCliente_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            int insertados = customerRepository.InsertarCliente(cliente);
+            MessageBox.Show($"{insertados} Registrado");
+            tboxCustomerID.Text = "";
+            tboxCompanyName.Text = "";
+            tboxContactName.Text = "";
+            tboxContactTitle.Text = "";
+            tboxAddres.Text = "";
+        }
+
+        private Customer CrearCliente()
+        {
+            var cliente = new Customer
+            {
+                CustomerID = tboxCustomerID.Text,
+                CompanyName = tboxCompanyName.Text,
+                ContactName = tboxContactName.Text,
+                ContactTitle = tboxContactTitle.Text,
+                Address = tboxAddres.Text,
+            };
+            MessageBox.Show(cliente.CompanyName, "Ingresado");
+            return cliente;
         }
         #endregion
 
