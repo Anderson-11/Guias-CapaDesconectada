@@ -82,7 +82,20 @@ namespace CapaDesconectada
                 var objeto1 = customerRepository.ExtraerInformacionCliente(customer);
                 var encontrado = objeto1.CompanyName;
                 tbxEncontradoTip.Text = encontrado;
+                tbxBuscarTip.Text = "";
             }
+        }
+
+        private void btnInsertarTip_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            adaptador.Insert(cliente.CustomerID, cliente.CompanyName, cliente.ContactName, cliente.ContactTitle, cliente.Address, cliente.City, cliente.Region, cliente.PostalCode, cliente.Country, cliente.Phone,
+                cliente.Fax);
+            tboxCustomerID.Text = "";
+            tboxCompanyName.Text = "";
+            tboxContactName.Text = "";
+            tboxContactTitle.Text = "";
+            tboxAddres.Text = "";
         }
         #endregion
     }

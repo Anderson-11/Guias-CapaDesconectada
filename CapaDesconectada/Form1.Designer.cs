@@ -56,6 +56,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tboxAddres = new System.Windows.Forms.TextBox();
             this.btnInsertarCliente = new System.Windows.Forms.Button();
+            this.btnInsertarTip = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -64,6 +65,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnInsertarCliente);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbxEncontrado);
             this.groupBox1.Controls.Add(this.label1);
@@ -112,7 +114,7 @@
             // 
             // btnBuscarNT
             // 
-            this.btnBuscarNT.Location = new System.Drawing.Point(130, 296);
+            this.btnBuscarNT.Location = new System.Drawing.Point(68, 296);
             this.btnBuscarNT.Name = "btnBuscarNT";
             this.btnBuscarNT.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarNT.TabIndex = 2;
@@ -140,6 +142,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnInsertarTip);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.tbxEncontradoTip);
             this.groupBox2.Controls.Add(this.label4);
@@ -188,7 +191,7 @@
             // 
             // btnBuscarTip
             // 
-            this.btnBuscarTip.Location = new System.Drawing.Point(143, 296);
+            this.btnBuscarTip.Location = new System.Drawing.Point(87, 296);
             this.btnBuscarTip.Name = "btnBuscarTip";
             this.btnBuscarTip.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarTip.TabIndex = 7;
@@ -296,7 +299,7 @@
             // 
             // btnInsertarCliente
             // 
-            this.btnInsertarCliente.Location = new System.Drawing.Point(914, 299);
+            this.btnInsertarCliente.Location = new System.Drawing.Point(186, 296);
             this.btnInsertarCliente.Name = "btnInsertarCliente";
             this.btnInsertarCliente.Size = new System.Drawing.Size(75, 23);
             this.btnInsertarCliente.TabIndex = 15;
@@ -304,12 +307,21 @@
             this.btnInsertarCliente.UseVisualStyleBackColor = true;
             this.btnInsertarCliente.Click += new System.EventHandler(this.btnInsertarCliente_Click);
             // 
+            // btnInsertarTip
+            // 
+            this.btnInsertarTip.Location = new System.Drawing.Point(202, 296);
+            this.btnInsertarTip.Name = "btnInsertarTip";
+            this.btnInsertarTip.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertarTip.TabIndex = 12;
+            this.btnInsertarTip.Text = "Insertar";
+            this.btnInsertarTip.UseVisualStyleBackColor = true;
+            this.btnInsertarTip.Click += new System.EventHandler(this.btnInsertarTip_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 450);
-            this.Controls.Add(this.btnInsertarCliente);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tboxAddres);
             this.Controls.Add(this.label8);
@@ -365,6 +377,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tboxAddres;
         private System.Windows.Forms.Button btnInsertarCliente;
+        private System.Windows.Forms.Button btnInsertarTip;
     }
 }
 
