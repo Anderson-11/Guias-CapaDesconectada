@@ -22,6 +22,31 @@ namespace CapaDesconectada
             InitializeComponent();
         }
 
+        private void RellenarForm(Customer cliente)
+        {
+            if (cliente != null)
+            {
+                tboxCustomerID.Text = cliente.CustomerID;
+                tboxCompanyName.Text = cliente.CompanyName;
+                tboxContactName.Text = cliente.ContactName;
+                tboxContactTitle.Text = cliente.ContactTitle;
+                tboxAddres.Text = cliente.Address;
+            }
+            if (cliente == null)
+            {
+                MessageBox.Show("objeto No Encontrado ");
+            }
+        }
+
+        private void Limpiar()
+        {
+            tboxCustomerID.Text = "";
+            tboxCompanyName.Text = "";
+            tboxContactName.Text = "";
+            tboxContactTitle.Text = "";
+            tboxAddres.Text = "";
+        }
+
         #region No tipado
         CustomerRepository customerRepository = new CustomerRepository();
         private void btnObtenerNoTipado_Click(object sender, EventArgs e)
@@ -36,6 +61,17 @@ namespace CapaDesconectada
             var encontrado = cliente.CompanyName;
             tbxEncontrado.Text = encontrado;
             tbxBusquedaNT.Text = "";
+
+            if (cliente == null)
+            {
+                MessageBox.Show("El objeto es null");
+            }
+            else
+            {
+                var listaClientes = new List<Customer> { cliente };
+                gridNoTipado.DataSource = listaClientes;
+                RellenarForm(cliente);
+            }
         }
 
         private void btnInsertarCliente_Click(object sender, EventArgs e)
@@ -43,11 +79,7 @@ namespace CapaDesconectada
             var cliente = CrearCliente();
             int insertados = customerRepository.InsertarCliente(cliente);
             MessageBox.Show($"{insertados} Registrado");
-            tboxCustomerID.Text = "";
-            tboxCompanyName.Text = "";
-            tboxContactName.Text = "";
-            tboxContactTitle.Text = "";
-            tboxAddres.Text = "";
+            Limpiar();
         }
 
         private Customer CrearCliente()
@@ -62,6 +94,15 @@ namespace CapaDesconectada
             };
             MessageBox.Show(cliente.CompanyName, "Ingresado");
             return cliente;
+        }
+
+        private void btnActualizarNT_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            var actuali = customerRepository.ActualizarCliente(cliente);
+            MessageBox.Show($"{actuali} filas actulizadas");
+            Limpiar();
+            tbxEncontrado.Text = "";
         }
         #endregion
 
@@ -91,11 +132,7 @@ namespace CapaDesconectada
             var cliente = CrearCliente();
             adaptador.Insert(cliente.CustomerID, cliente.CompanyName, cliente.ContactName, cliente.ContactTitle, cliente.Address, cliente.City, cliente.Region, cliente.PostalCode, cliente.Country, cliente.Phone,
                 cliente.Fax);
-            tboxCustomerID.Text = "";
-            tboxCompanyName.Text = "";
-            tboxContactName.Text = "";
-            tboxContactTitle.Text = "";
-            tboxAddres.Text = "";
+            Limpiar();
         }
         #endregion
     }
