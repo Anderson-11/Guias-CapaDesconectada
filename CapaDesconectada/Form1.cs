@@ -71,6 +71,7 @@ namespace CapaDesconectada
                 var listaClientes = new List<Customer> { cliente };
                 gridNoTipado.DataSource = listaClientes;
                 RellenarForm(cliente);
+                tboxCustomerID.Enabled = false;
             }
         }
 
@@ -103,6 +104,7 @@ namespace CapaDesconectada
             MessageBox.Show($"{actuali} filas actulizadas");
             Limpiar();
             tbxEncontrado.Text = "";
+            tboxCustomerID.Enabled = true;
         }
         #endregion
 
@@ -124,15 +126,52 @@ namespace CapaDesconectada
                 var encontrado = objeto1.CompanyName;
                 tbxEncontradoTip.Text = encontrado;
                 tbxBuscarTip.Text = "";
+                RellenarForm(objeto1);
+                tboxCustomerID.Enabled = false;
             }
         }
 
         private void btnInsertarTip_Click(object sender, EventArgs e)
         {
             var cliente = CrearCliente();
-            adaptador.Insert(cliente.CustomerID, cliente.CompanyName, cliente.ContactName, cliente.ContactTitle, cliente.Address, cliente.City, cliente.Region, cliente.PostalCode, cliente.Country, cliente.Phone,
+            int resultado = adaptador.Insert(cliente.CustomerID, cliente.CompanyName, cliente.ContactName, cliente.ContactTitle, cliente.Address, cliente.City, cliente.Region, cliente.PostalCode, cliente.Country, cliente.Phone,
                 cliente.Fax);
-            Limpiar();
+            if (resultado > 0)
+            {
+                MessageBox.Show("Se ingreso");
+                Limpiar();
+            }
+        }
+
+        private void btnActualizarTip_Click(object sender, EventArgs e)
+        {
+            var fila = adaptador.GetDataBy(tboxCustomerID.Text);
+
+            if (fila != null)
+            {
+                var datoOriginal = customerRepository.ExtraerInformacionCliente(fila);
+                var datosModificados = CrearCliente();
+
+                var filas = adaptador.Actualizar(
+                    datosModificados.CustomerID,
+                    datosModificados.CompanyName,
+                    datosModificados.ContactName,
+                    datosModificados.ContactTitle,
+                    datosModificados.Address,
+                    datosModificados.City,
+                    datosModificados.Region,
+                    datosModificados.PostalCode,
+                    datosModificados.Country,
+                    datosModificados.Phone,
+                    datosModificados.Fax, datoOriginal.CustomerID
+                );
+
+                MessageBox.Show($"{filas} filas modificadas");
+
+                Limpiar();
+                tbxEncontradoTip.Text = "";
+                tboxCustomerID.Enabled = true;
+            }
         }
         #endregion
     }

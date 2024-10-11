@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnActualizarNT = new System.Windows.Forms.Button();
             this.btnInsertarCliente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxEncontrado = new System.Windows.Forms.TextBox();
@@ -58,7 +59,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tboxAddres = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnActualizarNT = new System.Windows.Forms.Button();
+            this.btnActualizarTip = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -82,6 +83,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DataSet No Tipado";
+            // 
+            // btnActualizarNT
+            // 
+            this.btnActualizarNT.Location = new System.Drawing.Point(129, 373);
+            this.btnActualizarNT.Name = "btnActualizarNT";
+            this.btnActualizarNT.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarNT.TabIndex = 16;
+            this.btnActualizarNT.Text = "Actualizar";
+            this.btnActualizarNT.UseVisualStyleBackColor = true;
+            this.btnActualizarNT.Click += new System.EventHandler(this.btnActualizarNT_Click);
             // 
             // btnInsertarCliente
             // 
@@ -155,6 +166,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnActualizarTip);
             this.groupBox2.Controls.Add(this.btnInsertarTip);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.tbxEncontradoTip);
@@ -329,15 +341,15 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Datos Del Cliente";
             // 
-            // btnActualizarNT
+            // btnActualizarTip
             // 
-            this.btnActualizarNT.Location = new System.Drawing.Point(129, 373);
-            this.btnActualizarNT.Name = "btnActualizarNT";
-            this.btnActualizarNT.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizarNT.TabIndex = 16;
-            this.btnActualizarNT.Text = "Actualizar";
-            this.btnActualizarNT.UseVisualStyleBackColor = true;
-            this.btnActualizarNT.Click += new System.EventHandler(this.btnActualizarNT_Click);
+            this.btnActualizarTip.Location = new System.Drawing.Point(145, 373);
+            this.btnActualizarTip.Name = "btnActualizarTip";
+            this.btnActualizarTip.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarTip.TabIndex = 17;
+            this.btnActualizarTip.Text = "Actualizar";
+            this.btnActualizarTip.UseVisualStyleBackColor = true;
+            this.btnActualizarTip.Click += new System.EventHandler(this.btnActualizarTip_Click);
             // 
             // Form1
             // 
@@ -403,6 +415,7 @@
         private System.Windows.Forms.Button btnInsertarTip;
         private System.Windows.Forms.Button btnActualizarNT;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnActualizarTip;
     }
 }
 
