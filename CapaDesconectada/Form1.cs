@@ -124,11 +124,12 @@ namespace CapaDesconectada
         {
             var customers = adaptador.GetData();
             gridTipado.DataSource = customers;
+            tboxCustomerID.Enabled = true;
         }
 
         private void btnBuscarTip_Click(object sender, EventArgs e)
         {
-            var customer = adaptador.GetDataBy(tbxBuscarTip.Text);
+            var customer = adaptador.GetDataBy1(tbxBuscarTip.Text);
 
             if (customer != null)
             {
@@ -155,7 +156,7 @@ namespace CapaDesconectada
 
         private void btnActualizarTip_Click(object sender, EventArgs e)
         {
-            var fila = adaptador.GetDataBy(tboxCustomerID.Text);
+            var fila = adaptador.GetDataBy1(tboxCustomerID.Text);
 
             if (fila != null)
             {
@@ -182,6 +183,15 @@ namespace CapaDesconectada
                 tbxEncontradoTip.Text = "";
                 tboxCustomerID.Enabled = true;
             }
+        }
+
+        private void btnEliminarClienteTip_Click(object sender, EventArgs e)
+        {
+            int filasEliminadas = adaptador.EliminarCliente(tboxCustomerID.Text);
+            MessageBox.Show($"{filasEliminadas} filas eliminadas");
+            Limpiar();
+            tbxEncontradoTip.Text = "";
+            tboxCustomerID.Enabled = true;
         }
         #endregion
     }

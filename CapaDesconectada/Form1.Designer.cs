@@ -61,6 +61,7 @@
             this.tboxAddres = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnEliminarClienteNT = new System.Windows.Forms.Button();
+            this.btnEliminarClienteTip = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -168,6 +169,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnEliminarClienteTip);
             this.groupBox2.Controls.Add(this.btnActualizarTip);
             this.groupBox2.Controls.Add(this.btnInsertarTip);
             this.groupBox2.Controls.Add(this.label3);
@@ -186,7 +188,7 @@
             // 
             // btnActualizarTip
             // 
-            this.btnActualizarTip.Location = new System.Drawing.Point(145, 373);
+            this.btnActualizarTip.Location = new System.Drawing.Point(91, 373);
             this.btnActualizarTip.Name = "btnActualizarTip";
             this.btnActualizarTip.Size = new System.Drawing.Size(75, 23);
             this.btnActualizarTip.TabIndex = 17;
@@ -355,13 +357,23 @@
             // 
             // btnEliminarClienteNT
             // 
-            this.btnEliminarClienteNT.Location = new System.Drawing.Point(191, 373);
+            this.btnEliminarClienteNT.Location = new System.Drawing.Point(191, 372);
             this.btnEliminarClienteNT.Name = "btnEliminarClienteNT";
             this.btnEliminarClienteNT.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarClienteNT.TabIndex = 17;
             this.btnEliminarClienteNT.Text = "Eliminar";
             this.btnEliminarClienteNT.UseVisualStyleBackColor = true;
             this.btnEliminarClienteNT.Click += new System.EventHandler(this.btnEliminarClienteNT_Click);
+            // 
+            // btnEliminarClienteTip
+            // 
+            this.btnEliminarClienteTip.Location = new System.Drawing.Point(218, 372);
+            this.btnEliminarClienteTip.Name = "btnEliminarClienteTip";
+            this.btnEliminarClienteTip.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarClienteTip.TabIndex = 18;
+            this.btnEliminarClienteTip.Text = "Eliminar";
+            this.btnEliminarClienteTip.UseVisualStyleBackColor = true;
+            this.btnEliminarClienteTip.Click += new System.EventHandler(this.btnEliminarClienteTip_Click);
             // 
             // Form1
             // 
@@ -429,6 +441,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnActualizarTip;
         private System.Windows.Forms.Button btnEliminarClienteNT;
+        private System.Windows.Forms.Button btnEliminarClienteTip;
     }
 }
 
