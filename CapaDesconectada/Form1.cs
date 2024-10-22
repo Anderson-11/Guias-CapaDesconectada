@@ -52,6 +52,7 @@ namespace CapaDesconectada
         private void btnObtenerNoTipado_Click(object sender, EventArgs e)
         {
             gridNoTipado.DataSource = customerRepository.ObtenerTodos();
+            tboxCustomerID.Enabled = true;
         }
 
         private void btnBuscarNT_Click(object sender, EventArgs e)
@@ -102,6 +103,15 @@ namespace CapaDesconectada
             var cliente = CrearCliente();
             var actuali = customerRepository.ActualizarCliente(cliente);
             MessageBox.Show($"{actuali} filas actulizadas");
+            Limpiar();
+            tbxEncontrado.Text = "";
+            tboxCustomerID.Enabled = true;
+        }
+
+        private void btnEliminarClienteNT_Click(object sender, EventArgs e)
+        {
+            var eliminados = customerRepository.EliminarCliente(tboxCustomerID.Text);
+            MessageBox.Show($"{eliminados} filas eliminadas");
             Limpiar();
             tbxEncontrado.Text = "";
             tboxCustomerID.Enabled = true;

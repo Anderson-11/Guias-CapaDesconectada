@@ -40,6 +40,7 @@
             this.gridNoTipado = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnActualizarTip = new System.Windows.Forms.Button();
             this.btnInsertarTip = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxEncontradoTip = new System.Windows.Forms.TextBox();
@@ -59,7 +60,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tboxAddres = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnActualizarTip = new System.Windows.Forms.Button();
+            this.btnEliminarClienteNT = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminarClienteNT);
             this.groupBox1.Controls.Add(this.btnActualizarNT);
             this.groupBox1.Controls.Add(this.btnInsertarCliente);
             this.groupBox1.Controls.Add(this.label2);
@@ -86,7 +88,7 @@
             // 
             // btnActualizarNT
             // 
-            this.btnActualizarNT.Location = new System.Drawing.Point(129, 373);
+            this.btnActualizarNT.Location = new System.Drawing.Point(68, 373);
             this.btnActualizarNT.Name = "btnActualizarNT";
             this.btnActualizarNT.Size = new System.Drawing.Size(75, 23);
             this.btnActualizarNT.TabIndex = 16;
@@ -181,6 +183,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DataSet Tipado";
+            // 
+            // btnActualizarTip
+            // 
+            this.btnActualizarTip.Location = new System.Drawing.Point(145, 373);
+            this.btnActualizarTip.Name = "btnActualizarTip";
+            this.btnActualizarTip.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizarTip.TabIndex = 17;
+            this.btnActualizarTip.Text = "Actualizar";
+            this.btnActualizarTip.UseVisualStyleBackColor = true;
+            this.btnActualizarTip.Click += new System.EventHandler(this.btnActualizarTip_Click);
             // 
             // btnInsertarTip
             // 
@@ -341,15 +353,15 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Datos Del Cliente";
             // 
-            // btnActualizarTip
+            // btnEliminarClienteNT
             // 
-            this.btnActualizarTip.Location = new System.Drawing.Point(145, 373);
-            this.btnActualizarTip.Name = "btnActualizarTip";
-            this.btnActualizarTip.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizarTip.TabIndex = 17;
-            this.btnActualizarTip.Text = "Actualizar";
-            this.btnActualizarTip.UseVisualStyleBackColor = true;
-            this.btnActualizarTip.Click += new System.EventHandler(this.btnActualizarTip_Click);
+            this.btnEliminarClienteNT.Location = new System.Drawing.Point(191, 373);
+            this.btnEliminarClienteNT.Name = "btnEliminarClienteNT";
+            this.btnEliminarClienteNT.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarClienteNT.TabIndex = 17;
+            this.btnEliminarClienteNT.Text = "Eliminar";
+            this.btnEliminarClienteNT.UseVisualStyleBackColor = true;
+            this.btnEliminarClienteNT.Click += new System.EventHandler(this.btnEliminarClienteNT_Click);
             // 
             // Form1
             // 
@@ -416,6 +428,7 @@
         private System.Windows.Forms.Button btnActualizarNT;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnActualizarTip;
+        private System.Windows.Forms.Button btnEliminarClienteNT;
     }
 }
 
